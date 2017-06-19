@@ -9,9 +9,9 @@
 % % '/Volumes/MY PASSPORT/EEG/RVS/Analyzed_datasets/'
 % %'/Users/mstavrin/Documents/A_SettingEEG_lab/A_RECORDINGS/Analyzed_datasets/';
 
-Raw_Path='Y:\Prosjekt\Tune_Into_Kids_Session1\TIK\AXCPT_TIK\';
+Raw_Path='Z:\Prosjekt\Tune_Into_Kids_Session1\TIK\AXCPT_TIK\';
 %'/Users/mstavrin/Documents/A_SettingEEG_lab/A_RECORDINGS/RAW_datasets/'; 
-Analyzed_path='Y:\Prosjekt\Tune_Into_Kids_Session1\TIK\Analyzed_datasets\';
+Analyzed_path='Z:\Prosjekt\Tune_Into_Kids_Session1\TIK\Analyzed_datasets\';
 
 
 cd(Raw_Path)

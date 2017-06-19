@@ -24,7 +24,7 @@ end
 % test22=temp22(1,1)
 clear kk listing_raw
 %% 
-for kk=1:Num_folders
+for kk=38:Num_folders
     % Define on which subject we are working
     Subject_filename=temp22{kk,:}; 
     
@@ -84,11 +84,11 @@ for kk=1:Num_folders
 %    StimTwo_RESP=T(2:end, StimTwo_RESP_tablenum);
    
 %     %StimTwo_CRESP=T(2:end, 134); For Jacob
-    StimTwo_CRESP=T(2:end, 124);% Session 1
+%     StimTwo_CRESP=T(2:end, 124);% Session 1
     StimTwo_CRESP=T(2:end, 78); % Session 2
 
 %     %StimTwo_RESP=T(2:end, 147); For Jacob
-    StimTwo_RESP=T(2:end, 137); % Session 1
+%     StimTwo_RESP=T(2:end, 137); % Session 1
     StimTwo_RESP=T(2:end, 83); % Session 2
     
     Num_triggers=size(StimTwo_CRESP); 

@@ -12,12 +12,6 @@ Raw_Path='Y:\Prosjekt\Tune_Into_Kids_Session1\TIK\AXCPT_TIK\';
 %'/Users/mstavrin/Documents/A_SettingEEG_lab/A_RECORDINGS/RAW_datasets/'; 
 Analyzed_Path='Y:\Prosjekt\Tune_Into_Kids_Session1\TIK\Analyzed_datasets\';
 
-% Raw_Path='/Users/mstavrin/Documents/A_SettingEEG_lab/A_RECORDINGS/RAW_datasets/AXCPT/';
-% %'/Users/mstavrin/Documents/A_SettingEEG_lab/A_RECORDINGS/RAW_datasets/'; 
-% Analyzed_Path='/Users/mstavrin/Documents/A_SettingEEG_lab/A_RECORDINGS/Analyzed_datasets/AXCPT/';
-% % '/Volumes/MY PASSPORT/EEG/RVS/Analyzed_datasets/'
-% %'/Users/mstavrin/Documents/A_SettingEEG_lab/A_RECORDINGS/Analyzed_datasets/';
-
 cd(Analyzed_Path)
 % Define list of Folders - Subjects  
 Name_subject_folder='AXCPT*_TIK*';
@@ -37,8 +31,10 @@ conditions_cue={'As', 'Bs'};
 % AXAYBXBY and the program gives out the As and Bs as well, so no need to
 % select the condition_cue for the cue plotting. 
 
+% Select ALWAYS probe
 conditions=conditions_probe;
-text_condition='cue';
+% change this to cue or probe as it goes to filenames and figures naming
+text_condition='probe';
 
 % load a dataset to get the dimensions - cue 
 Analyzed_path_folder_1='Y:\Prosjekt\Tune_Into_Kids_Session1\TIK\Analyzed_datasets\AXCPT1_TIK_2016001001\';
@@ -203,6 +199,11 @@ results.AX=meanEEGdataAX;
 results.AY=meanEEGdataAY;
 results.BX=meanEEGdataBX;
 results.BY=meanEEGdataBY;
+results.As=meanEEGdataAX+meanEEGdataAY;
+results.Bs=meanEEGdataBX+meanEEGdataBY;
+results.timeVec_msec=timeVec_msec;
+results.Fs=Fs;
+
 results.timeVec_msec=timeVec_msec;
 results.Fs=Fs;
 

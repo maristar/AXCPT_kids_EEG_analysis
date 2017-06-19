@@ -15,7 +15,7 @@ Chan_name=ALLEEG.chanlocs(chan_number).labels;
     fig1=figure;
     set(gca, 'fontsize', 22);
     hb=plot(timeVec_msec, C1_AX,'r', timeVec_msec, C1_AY, 'm', timeVec_msec, C1_BX,'g',timeVec_msec, C1_BY,'b');
-    title_string=[ text_condition ' -All Conditions Channel ' Chan_name]
+    title_string=[ text_condition ' -All Conditions Channel ' Chan_name];
     title(title_string);
     legend_handle=legend('AX','AY','BX', 'BY'); 
     SP=2000;line([SP SP], get(gca, 'ylim'), 'Color', [0 0 1]);
@@ -26,11 +26,38 @@ Chan_name=ALLEEG.chanlocs(chan_number).labels;
     fig2=figure(chan_number+100);
     set(gca, 'fontsize', 22);
     hb2=plot(timeVec_msec, C1_As, 'r', timeVec_msec, C1_Bs, 'b');
-    title_string=[ text_condition 'As vs Bs Channel ' Chan_name]
+    title_string=[ text_condition 'As vs Bs Channel ' Chan_name];
     title(title_string);
     legend_handle2=legend('As', 'Bs');
     SP=2000;line([SP SP], get(gca, 'ylim'), 'Color', [0 0 1]);
     SP0=0; line([SP0 SP0], get(gca, 'ylim'), 'Color', [0 0 1]);
     saveas(fig2,title_string, 'fig');
     close(fig2)
+    
+    % only for probe, plot the valids (AX; BX) and the invalids (AY;BY)
+    if strcmp(text_condition, 'probe')==1
+        % Plot for valids, AX, AY (only for probe)
+        fig3=figure;
+        set(gca, 'fontsize', 22);
+        hb=plot(timeVec_msec, C1_AX,'r', timeVec_msec, C1_BX, 'g');
+        title_string=[ text_condition ' -Valid (AX, BX) ' Chan_name];
+        title(title_string);
+        legend_handle2=legend('AX', 'BX');
+        SP=2000;line([SP SP], get(gca, 'ylim'), 'Color', [0 0 1]);
+        SP0=0; line([SP0 SP0], get(gca, 'ylim'), 'Color', [0 0 1]);
+        saveas(fig3,title_string, 'fig');
+        close(fig3)
+    
+        % Plot for invalids, AY, BY (only for probe)
+        fig4=figure;
+        set(gca, 'fontsize', 22);
+        hb=plot(timeVec_msec, C1_AY,'m', timeVec_msec, C1_BY, 'b');
+        title_string=[ text_condition ' Invalid (AY, BY) ' Chan_name];
+        title(title_string);
+        legend_handle2=legend('AY', 'BY');
+        SP=2000;line([SP SP], get(gca, 'ylim'), 'Color', [0 0 1]);
+        SP0=0; line([SP0 SP0], get(gca, 'ylim'), 'Color', [0 0 1]);
+        saveas(fig4,title_string, 'fig');
+        close(fig4)
+    end 
 end
